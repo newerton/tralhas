@@ -24,12 +24,14 @@ namespace Aula.Repositorio
                 Connection = Conn
             };
             cmdComando.ExecuteNonQuery();
+            Conn.Close();
         }
 
         public NpgsqlDataReader ExecutaComandoRetorno(string Query)
         {
             var cmdComando = new NpgsqlCommand(Query, Conn);
             return cmdComando.ExecuteReader();
+            Conn.Close();
         }
     }
 }

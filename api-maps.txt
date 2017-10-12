@@ -1,0 +1,1 @@
+https://maps.googleapis.com/maps/api/geocode/json?address=R.+Paulo+Lotz,+68+-+Monte+Belo,+Londrina+-+PR+CA&key=AIzaSyDiasBScrPPdT4YnkrXDhrZgg1yEBXCqPM

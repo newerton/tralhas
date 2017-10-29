@@ -1,0 +1,231 @@
+primeiro colocar model Produto no new food,
+segundo,  verificar se existe a variavel pos, se sim retirar.
+varificar todas as imgs e img que voce ficou trocando os model
+campos imgs inda null porque fiz no html
+verificar com cuidado os <?=$i?>
+retirar o inout amais não faz diferença
+====================================
+script da imgem funcionando
+====================================
+php =
+
+<?php
+    for ($i = 0; $i < 5; $i++) {
+        ?>
+            <div class="form-group field-produto-imgs-<?=$i?>">
+                <label class="control-label custom-file-upload" for="produto-imgs-<?=$i?>">
+                    <?=Html::img('@web/img/semImg.png', ['class'=>'imgProd', 'id'=>"img-exem-$i"])?>
+                </label>
+                <input type="file" class="imgInput" id="produto-imgs-<?=$i?>" name="Produto[imgs][<?=$i?>]" multiple="" accept="image/*">
+                <div class="help-block"></div>
+            </div>
+        <?php
+    }
+?>
+
+js =
+var img = document.querySelectorAll('.imgInput');
+    img.forEach(function (e) {
+        e.addEventListener('change', function (e) {
+            var imgDaLabel = e.path[1].children[0].children[0];
+            var file = e.path[0].files[0];
+            var imageType = /image.*/;
+
+            if (file.type.match(imageType)) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imgDaLabel.src = reader.result;
+                    document.getElementById('img-big').src = document.getElementById('img-exem-0').src;
+                    document.getElementById('img-big').style.width = "100%";
+                    document.getElementById('img-big').style.height = "100%";
+                }
+
+                reader.readAsDataURL(file);
+            } else {
+                fileDisplayArea.innerHTML = "File not supported!"
+            }
+        });
+    });
+====================================
+//script da imgem funcionando
+====================================
+food new -- ok
+
+bugs food detail
+food detail
+ <?php
+    for ($i = 0; $i < 5; $i++) {
+        $src = isset($proImgs[$i]) || !null ? 'uploads/'.$proImgs[$i] : 'img/semImg.png';
+        echo $form
+            ->field($model, "pos[$i]")
+            ->hiddenInput(['value'=>'ok', 'id'=>"produto-opimgs-$i"])
+            ->label(false);
+        ?>
+        <div class="form-group field-produto-imgs-<?=$i?>">
+            <label class="control-label custom-file-upload" for="produto-imgs-<?=$i?>">
+                <?=Html::img("@web/$src", [ 'class'=>'imgProd','id'=>"img-exem-$i"])?>
+            </label>
+            <input type="file" class="imgInput" id="produto-imgs-<?=$i?>" value="arroz" name="Produto[imgs][<?=$i?>]" multiple="" accept="image/*">
+            <div class="help-block"></div>
+        </div>
+        <?php
+    }
+  ?>
+
+food new
+    <?php
+        for ($i = 0; $i < 5; $i++) {
+            echo $form
+                ->field($model, "pos[$i]")
+                ->hiddenInput(['value'=>'ok', 'id'=>"produto-opimgs-$i"])
+                ->label(false);
+            ?>
+                <div class="form-group field-produto-imgs-<?=$i?>">
+                    <label class="control-label custom-file-upload" for="produto-imgs-<?=$i?>">
+                        <?=Html::img('@web/img/semImg.png', ['class'=>'imgProd', 'id'=>"img-exem-$i"])?>
+                    </label>
+                    <input type="file" class="imgInput" id="produto-imgs-<?=$i?>" name="Produto[imgs][<?=$i?>]" multiple="" accept="image/*">
+                    <div class="help-block"></div>
+                </div>
+            <?php
+        }
+    ?>
+
+js
+var img = document.querySelectorAll('.imgInput');
+    img.forEach(function (e) {
+        e.addEventListener('change', function (e) {
+            var imgDaLabel = e.path[1].children[0].children[0];
+            var file = e.path[0].files[0];
+            var imageType = /image.*/;
+
+            if (file.type.match(imageType)) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+
+                    imgDaLabel.src = reader.result;
+
+                    var str = imgDaLabel.id;
+                    var op = document.getElementById('produto-opimgs-' + str.charAt(str.length - 1));
+                    op.value = 'alter';
+
+                    document.getElementById('img-big').src = document.getElementById('img-exem-0').src;
+                    document.getElementById('img-big').style.width = "100%";
+                    document.getElementById('img-big').style.height = "100%";
+                }
+
+                reader.readAsDataURL(file);
+            } else {
+                fileDisplayArea.innerHTML = "File not supported!"
+            }
+        });
+    });
+
+controller
+
+    public function actionFoodDetail($id)
+    {
+        $updated_at = date("dmyhi");
+
+        $model = Produto::findOne($id);
+        $model->getImgs($id);
+        $imgAlter = [];
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            for ($i = 0; $i < 5; $i++) {
+                $model->imgs = UploadedFile::getInstances($model, 'imgs');
+                $model->uploads();
+                if (isset($model->imgs[$i])) {
+                    $model->imgs[$i] = UploadedFile::getInstance($model, "imgs[$i]");
+                }
+            }
+
+            for ($i = 0; $i < 5; $i++) {
+                if ($model->pos[$i] == 'alter') {
+                    $img = ImgsProduto::findOne(['id_produto' => $model->id, 'pos' => $i]);
+                    array_push($imgAlter, $img);
+                }
+            }
+
+            foreach ($imgAlter as $key => $img) {
+                $img->img = $model->imgs[$key]->name;
+                $img->save();
+            }
+            return $this->redirect(['foods']);
+        }
+
+        return $this->render('food-detail', ['model' => $model]);
+    }
+
+    public function actionFoodDelete($id)
+    {
+        $model = Produto::findOne($id);
+        if (Yii::$app->request->isPost) {
+            $model->deletar();
+            return $this->actionFoods();
+        }
+        return $this->render('food-delete', ['model' => $model]);
+    }
+
+    public function actionFoodNew()
+    {
+        $created_at = date("dmyhi");
+        $model = new Produto();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->id_parceiro = Yii::$app->user->identity->getId();
+            $model->created_at = $created_at;
+            $model->status = 10;
+            $model->save();
+
+            $model->imgs = UploadedFile::getInstances($model, 'imgs');
+            $model->uploads();
+            for ($i = 0; $i < 5; $i++) {
+                $model->imgs[$i] = UploadedFile::getInstance($model, "imgs[$i]");
+                $model->storeNew($model->imgs[$i], $i);
+            }
+            return $this->redirect('foods');
+        }
+
+
+        return $this->render('food-new', ['model' => $model]);
+    }
+
+
+model produto
+
+  public function upload($img)
+    {
+        $img->saveAs('uploads/' . $img->baseName . '.' . $img->extension);
+        return true;
+    }
+
+    public function uploads()
+    {
+        foreach ($this->imgs as $img) {
+            $img->saveAs('uploads/' . $img->baseName . '.' . $img->extension);
+        }
+        return true;
+    }
+
+    public function storeNews()
+    {
+        foreach ($this->imgs as $up) {
+            $img = new ImgsProduto();
+            $img->id_produto = $this->id;
+            $img->img = $up;
+            $img->save();
+        }
+
+    }
+
+    public function storeNew($imgs, $i = null)
+    {
+        $img = new ImgsProduto();
+        $img->id_produto = $this->id;
+        $img->pos = $i;
+        $img->img = $imgs;
+        $img->save();
+
+    }

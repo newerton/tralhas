@@ -4,3 +4,5 @@ https://stackoverflow.com/questions/34482597/yii2-the-directory-is-not-writable-
 não sei sobre o que fala, mas foi o que resolvel:
 https://github.com/Beaten-Sect0r/yii2-core/issues/13
 faça um virtualHost também. 
+aqui tem umas diacas, e um htaccess que funciona:
+http://www.yiiframework.com/forum/index.php/topic/51325-yii20-url-manager-problem-with-the-indexphp-and-debugger-tool/

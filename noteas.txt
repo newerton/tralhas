@@ -3,3 +3,4 @@ fala sobre alterar o grupo da pasta para apache:
 https://stackoverflow.com/questions/34482597/yii2-the-directory-is-not-writable-by-the-web-process-frontend-web-assets
 não sei sobre o que fala, mas foi o que resolvel:
 https://github.com/Beaten-Sect0r/yii2-core/issues/13
+faça um virtualHost também. 

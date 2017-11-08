@@ -8,3 +8,5 @@ aqui tem umas diacas, e um htaccess que funciona:
 http://www.yiiframework.com/forum/index.php/topic/51325-yii20-url-manager-problem-with-the-indexphp-and-debugger-tool/
 arruma permissions pra apache/httpd no fedora:
 http://albertech.net/2011/03/fix-fedora-selinux-permissions-for-php-file-upload/
+select por data no yii2:
+https://stackoverflow.com/questions/35608762/how-to-use-date-format-to-get-month-and-year-in-yii2

@@ -10,3 +10,5 @@ arruma permissions pra apache/httpd no fedora:
 http://albertech.net/2011/03/fix-fedora-selinux-permissions-for-php-file-upload/
 select por data no yii2:
 https://stackoverflow.com/questions/35608762/how-to-use-date-format-to-get-month-and-year-in-yii2
+bug de não carregar os controllers, só a index, tem que ativar o rewrite do apache:
+https://stackoverflow.com/questions/10144634/htaccess-invalid-command-rewriteengine-perhaps-misspelled-or-defined-by-a-m

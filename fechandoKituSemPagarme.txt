@@ -1,0 +1,129 @@
+//Cliente//
+
+
+-all-companies-foods
+
+Cep do navbar - ok
+bolinha mucha da sacola - ok
+liks footer - ok - porem falta umas paginas
+alinhar logou/sair do minha conta - ok
+pesquisa busca estabelicimento
+botões categorias comidas
+arrumar tamanho das imgs
+fazer js do rate pintar conforme mouse over
+mostar icone da forma de entrega do parceiro
+mostar categorias do parceiro
+colocar navegação certa estabelecimentos | comidas na all-companies-foods
+
+-login
+
+afeito js label
+aliminar cliente new, ir para all-company-foods sem cep
+cadastrar clietne sem endereço
+
+-meus dados
+
+arrumar efeito das labels
+arrumar alterar senha que quebrou
+arrumar campo que pulou por causa do lat lng
+fazer dados altararem, inclusive a senha, porém saparado
+
+-my-likes
+
+colocar min-height na tela
+arrumar like que ta bizzaro
+fazer comida ser um link pŕa ela
+
+-profile-company
+
+icosnes de entrega
+categorias com |
+pesquisa por comida
+menu com as categorias
+like ta feio
+
+-profile-food
+
+icones de entrega
+verificar tamanho massa pras imgs
+arrumar valor da quantidade do produto
+
+-sacola
+
+multiplicar itens no onchange do campo quant * detalhe, fazer depois
+alinhar campo quant
+
+-order
+
+entregano - arrumar
+tirar bug da forma da pagamento * detalhe, fazer depois
+arrumar linha do produto
+verificar se cliente tem endereço
+
+-my-orders
+
+formatar data dos pedidos
+arrumar menu Abertos | Finalizados
+
+arrumar navegação cagada
+
+//Parceiro//
+
+-index
+
+arrumar validação do cnpj
+
+-new-profile
+
+arrumar compa deslocado
+diminuir raio de entrega pra 100
+melhorar toggle das formas de entrega
+deixar a img passar
+
+-foods
+
+aplicar paginação
+aplicar order by
+aplicar ação coletiva
+
+-food-new
+
+arrumar batão que ficou gigante
+varificar se usuario meteu um R$ no preço
+valor ta bugado
+
+-food-detail
+
+colocar imgs placeholder
+boto gigante
+valor ta bugado
+
+-food-delete
+
+arrumar botões
+
+-my-profile
+
+arrumar tela toda
+fazer funcionar
+
+-my-infos
+
+ativar solicitação
+alterar senha e email
+efeito label js
+
+-orders
+
+adicionar paginação
+adicionar order by
+arrumar layout
+
+-alterar-plano
+
+arrumar navbar
+
+//Admin//
+
+pesquisa parceiros
+aditar parceiro

@@ -7,57 +7,58 @@ Cep do navbar - ok
 bolinha mucha da sacola - ok
 liks footer - ok - porem falta umas paginas
 alinhar logou/sair do minha conta - ok
-pesquisa busca estabelicimento
-botões categorias comidas
-arrumar tamanho das imgs
-fazer js do rate pintar conforme mouse over
-mostar icone da forma de entrega do parceiro
-mostar categorias do parceiro
-colocar navegação certa estabelecimentos | comidas na all-companies-foods
+pesquisa busca estabelicimento - ok
+botões categorias comidas - ok
+arrumar tamanho das imgs - * depois
+fazer js do rate pintar conforme mouse over - * depois
+mostar icone da forma de entrega do parceiro - ok
+mostar categorias do parceiro - ok
+deixar menus selecionados pós clique - * depois
+colocar navegação certa estabelecimentos | comidas na all-companies-foods - * depois
 
 -login
 
-afeito js label
-aliminar cliente new, ir para all-company-foods sem cep
-cadastrar clietne sem endereço
+afeito js label - ok
+aliminar cliente new, ir para all-company-foods sem cep - ok
+cadastrar clietne sem endereço - ok
 
 -meus dados
 
-arrumar efeito das labels
-arrumar alterar senha que quebrou
-arrumar campo que pulou por causa do lat lng
-fazer dados altararem, inclusive a senha, porém saparado
+arrumar efeito das labels - ok
+arrumar alterar senha que quebrou - ok
+arrumar campo que pulou por causa do lat lng - ok
+fazer dados altararem, inclusive a senha, porém saparado - ok
 
 -my-likes
 
-colocar min-height na tela
-arrumar like que ta bizzaro
-fazer comida ser um link pŕa ela
+colocar min-height na tela - ok
+arrumar like que ta bizzaro - * depois - preciso da thais
+fazer comida ser um link pŕa ela - ok
 
 -profile-company
 
-icosnes de entrega
-categorias com |
-pesquisa por comida
-menu com as categorias
-like ta feio
+icosnes de entrega - ok
+categorias com | - ok
+pesquisa por comida - ok
+menu com as categorias - ok
+like ta feio - * depois - preciso da thais
 
 -profile-food
 
-icones de entrega
-verificar tamanho massa pras imgs
-arrumar valor da quantidade do produto
+icones de entrega - ok
+verificar tamanho massa pras imgs - ok
+arrumar valor da quantidade do produto - * depois
 
 -sacola
 
 multiplicar itens no onchange do campo quant * detalhe, fazer depois
-alinhar campo quant
+alinhar campo quant - ok
 
 -order
 
-entregano - arrumar
+entregano - arrumar - ok
 tirar bug da forma da pagamento * detalhe, fazer depois
-arrumar linha do produto
+arrumar linha do produto - ok
 verificar se cliente tem endereço
 
 -my-orders
@@ -127,3 +128,12 @@ arrumar navbar
 
 pesquisa parceiros
 aditar parceiro
+
+//Geral//
+aplicar mascaras em todoas os capos
+triarar erros navegação
+arrumar sacola - bugando na edição do cliente
+aplicar sacola mobile
+não deixar pedir de parceiros diferentes
+profile-food - rate parceiro - multiplicação preço
+order - pegar foto da empresa - arrumar form alterar endereço

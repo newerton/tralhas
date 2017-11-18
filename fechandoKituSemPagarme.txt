@@ -138,3 +138,4 @@ não deixar pedir de parceiros diferentes
 profile-food - rate parceiro - multiplicação preço
 order - pegar foto da empresa - arrumar form alterar endereço
 varificar se cep é valido antes de enviar para api
+categorias dos produtos profile-company

@@ -59,32 +59,30 @@ alinhar campo quant - ok
 entregano - arrumar - ok
 tirar bug da forma da pagamento * detalhe, fazer depois
 arrumar linha do produto - ok
-verificar se cliente tem endereço
+verificar se cliente tem endereço - ok
 
 -my-orders
 
-formatar data dos pedidos
-arrumar menu Abertos | Finalizados
-
-arrumar navegação cagada
+formatar data dos pedidos - ok
+arrumar menu Abertos | Finalizados - ok
 
 //Parceiro//
 
 -index
 
-arrumar validação do cnpj
+arrumar validação do cnpj - ok
 
 -new-profile
 
-arrumar compa deslocado
-diminuir raio de entrega pra 100
-melhorar toggle das formas de entrega
+arrumar compa deslocado - ok
+diminuir raio de entrega pra 100 - ok
+melhorar toggle das formas de entrega 
 deixar a img passar
 
 -foods
 
-aplicar paginação
-aplicar order by
+aplicar paginação - ok
+aplicar order by - ok
 aplicar ação coletiva
 
 -food-new
@@ -138,4 +136,8 @@ não deixar pedir de parceiros diferentes
 profile-food - rate parceiro - multiplicação preço
 order - pegar foto da empresa - arrumar form alterar endereço
 varificar se cep é valido antes de enviar para api
-categorias dos produtos profile-company
+categorias dos produtos profile-compan
+verificar valor total da sacola
+cadastro do endereco cliente, cep não valo com chave
+colocar cep cadastrado nos inputs automaticamente
+arrumar navegação cagada
